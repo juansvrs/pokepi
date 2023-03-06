@@ -22,14 +22,58 @@ export const PokeCard = ({url}) => {
                     <div className='container d-flex gap-1'>
 
                     {
-                                        data.types.map( a=>(
-                                        
-                
-                                            <span class="badge rounded-pill bg-primary">{a.type.name}</span>      
-                                        ))   
-                                    
-                                    
-                                    }
+
+                        data.types.map(a=>{
+                    
+
+                    switch (a.type.name) {
+                        case "flying":
+                            //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+                            return(<span class="badge rounded-pill bg-light text-capitalize">{a.type.name}</span>      )
+                        case "fire":
+                            return( <span class="badge rounded-pill bg-danger text-capitalize">{a.type.name}</span> )
+                            //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2 
+                        case "grass":
+                            //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                          return( <span class="badge rounded-pill bg-success text-capitalize">{a.type.name}</span>)
+                        case "ice":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(<span class="badge rounded-pill bg-info text-capitalize" >{a.type.name}</span>)
+                        case "water":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(<span class="badge rounded-pill bg-info text-capitalize">{a.type.name}</span>)
+                        case "bug":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return( <span class="badge rounded-pill bg-success text-capitalize">{a.type.name}</span>)
+                        case "normal":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(   <span class="badge rounded-pill bg-dark">{a.type.name}</span>)
+
+                        case "electric":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(   <span class="badge rounded-pill bg-warning">{a.type.name}</span>)
+
+                        case "ground":
+                         //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(   <span class="badge rounded-pill bg-warning">{a.type.name}</span>)
+                        case "fairy":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(   <span class="badge rounded-pill bg-secondary">{a.type.name}</span>)
+                        case "psychic":
+                                //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+                            return(   <span class="badge rounded-pill bg-secondary">{a.type.name}</span>)
+
+
+                          
+                        default:
+                            //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+                            return(<span class="badge rounded-pill bg-primary text-capitalize">{a.type.name}</span> )
+                         }
+                    //<span class="badge rounded-pill bg-primary">{a.type.name}</span>   
+                      
+                        }
+                    )
+        }
 
                         
                     

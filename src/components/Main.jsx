@@ -32,12 +32,20 @@ export const Main = ({results}) => {
                     </div>
                     :
                     <div> 
+
+                        <form className="d-flex w-50 container mt-2">
+                            <input className="form-control me-sm-2" type="search" placeholder="Buscar"/>
+                            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
                         
 
                         <div className='d-flex flex-row gap-5 justify-content-center m-4'>
 
-                            <button   onClick={()=>setUrl(data.previous)
-                            } type="button" class="btn btn-outline-danger rounded-5">
+                            
+                        
+                            
+                            
+                            <button   onClick={()=>setUrl(data.previous)} type="button" class="btn btn-outline-danger rounded-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <polyline points="15 6 9 12 15 18" />
