@@ -8,8 +8,11 @@ export const Main = ({results}) => {
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon")
     const estado=UseFetch(url)
     const {cargando,data}=estado
-    //cargando?console.log("loading"):console.log(data.results)
-    let frutas = ["Manzana", "Banana"]
+   
+
+    //para busqueda
+    const[busqueda,setBusqueda]= useState('')//variable para busqueda de pokemon y filtrar
+    
 
 
 
@@ -34,17 +37,13 @@ export const Main = ({results}) => {
                     <div> 
 
                         <form className="d-flex w-50 container mt-2">
-                            <input className="form-control me-sm-2" type="search" placeholder="Buscar"/>
+                            <input onChange={(e)=> setBusqueda(e.target.value)} className="form-control me-sm-2" type="search" placeholder="Buscar"/>
                             <button className="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                         
 
                         <div className='d-flex flex-row gap-5 justify-content-center m-4'>
-
-                            
-                        
-                            
-                            
+                                         
                             <button   onClick={()=>setUrl(data.previous)} type="button" class="btn btn-outline-danger rounded-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -63,7 +62,7 @@ export const Main = ({results}) => {
 
 
 
-                        <ContenedorCards results={data.results}></ContenedorCards>
+                        <ContenedorCards results={data.results} filtro={busqueda}></ContenedorCards>
 
 
 

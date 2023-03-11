@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { UseFetch } from './UseFetch'
 
 export const PokeCard = ({url}) => {
-    
+
     const estado= UseFetch(url)
     const {cargando,data}=estado
 
@@ -14,8 +14,7 @@ export const PokeCard = ({url}) => {
                 <h4 className="alert-heading">Cargando</h4>
                 <p className="mb-0">Porfavor espera...</p>
             </div>
-            :
-            
+            : 
                 <div  className=" card text-white bg-dark mb-3 d-flex">
                     <span class=" badge rounded-pill bg-warning">Id: {data.id}</span>
 
@@ -24,7 +23,7 @@ export const PokeCard = ({url}) => {
                     {
 
                         data.types.map(a=>{
-                    
+
 
                     switch (a.type.name) {
                         case "flying":
@@ -74,19 +73,14 @@ export const PokeCard = ({url}) => {
                         }
                     )
         }
-
-                        
-                    
                     </div>
                     
 
                     
-                    <img className="img-fluid w-75 align-self-center" src={data.sprites.front_default} alt="imgPokemon"/>
+                    <img className="img-fluid w-75 align-self-center" src={data.sprites.other.home.front_default} alt="imgPokemon"/>
                     
 
                     <span className="badge bg-secondary fs-5 text-capitalize">{data.forms[0].name}</span>
-
-                   
 
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
@@ -106,8 +100,7 @@ export const PokeCard = ({url}) => {
                                             </li>
                                             
                                         ))   
-                                    
-                                    
+                                          
                                     }
                                 
                                 </div>
